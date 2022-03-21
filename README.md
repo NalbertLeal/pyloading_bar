@@ -5,34 +5,46 @@
 Just use pip:  
   
 ```bash
-$ pip install -i https://test.pypi.org/simple/ pyloading-bar==0.1.1
+$ pip install -i https://test.pypi.org/simple/ pyloading-bar==0.1.5
 ```  
   
 ## How to use:  
 
-For now pyoading_bar is a very simple package that just support a simple progress bar that must be instantiated and after each step you must call the bar to update a step:
+For now pyloading_bar is a very simple package to draw a simple progress bar in the terminal:
+
+There's two versions of the bar. The Bar (most simple version of the bar):
 
 ```python
 from pyloading_bar import Bar
 
-number_of_steps = 10
+number_of_steps = 2
 bar = bar(number_of_steps)
-for step in range(number_of_steps):
-  bar.next()
+# do something
+bar.next()
+# do something
+bar.next()
 ```
 
 The usual bar is like this:  
 [##########]  
 
-But you can chage the bar by the symbol parameter:
+And the RangeBar, this object is created to be used just like an interator on the for loop:
 
 ```python
-from pyloading_bar import Bar  
+from pyloading_bar import RangeBar
+
+for i in RangeBar(10):
+  print(i)
+```
+
+You can chage the bar by the symbol parameter:
+
+```python
+from pyloading_bar import RangeBar
   
 number_of_steps = 10
-bar = bar(number_of_steps, symbol='@')
-for step in range(number_of_steps):
-  bar.next()
+for step in RangeBar(number_of_steps):
+  print(step)
 ```
 
 now the bar look like this:  
@@ -44,7 +56,6 @@ And if you want that the terminal don't update the last line with the new progre
 from pyloading_bar import Bar
 
 number_of_steps = 10
-bar = bar(number_of_steps, symbol='@', update_terminal=False)
-for step in range(number_of_steps):
-  bar.next()
+for step in RangeBar(number_of_steps, symbol='@', update_terminal=False):
+  print(step)
 ```
