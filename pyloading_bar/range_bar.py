@@ -8,7 +8,7 @@ class RangeBar(Bar):
     return self
 
   def __next__(self):
-    if self.total > self.current_step:
+    if self._total > self._current_step:
       self.next()
-      return self.current_step
+      return self._current_step
     raise StopIteration

@@ -1,26 +1,29 @@
 class Bar:
   def __init__(self, total, current_step=0, symbol='#', update_terminal=True):
-    self.total = total
-    self.current_step = current_step
-    self.symbol = symbol[0]
-    self.update_terminal = update_terminal
-    self.draw()
+    self._total = total
+    self._current_step = current_step
+    self._symbol = symbol[0]
+    self._update_terminal = update_terminal
+    self._draw()
 
-  def next(self):
-    self.current_step += 1
-    self.draw()
-    
-  def draw(self):
-    progress_done = self.current_step * self.symbol
-    progress_todo = (self.total - self.current_step ) * ' '
+  def _loading_bar(self):
+    progress_done = self._current_step * self._symbol
+    progress_todo = (self._total - self._current_step ) * ' '
     bar = f'[{progress_done}{progress_todo}]'
 
-    percentage = round((self.current_step / self.total) * 100, 2)
+    percentage = round((self._current_step / self._total) * 100, 2)
     str_percentage = f' {percentage}%'
 
-    loading_bar = f'{bar}{str_percentage}'
+    return f'{bar}{str_percentage}'
+    
+  def _draw(self):
+    bar = self._loading_bar()
 
-    if self.update_terminal:
-      print(f'\r{loading_bar}', end='')
+    if self._update_terminal:
+      print(f'\r{bar}', end='')
     else:
-      print(f'{loading_bar}')
+      print(f'{bar}')
+
+  def next(self):
+    self._current_step += 1
+    self._draw()
