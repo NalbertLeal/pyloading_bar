@@ -12,9 +12,15 @@ class Bar:
     
   def draw(self):
     progress_done = self.current_step * self.symbol
-    progress_todo = (self.total - self.current_step - 1) * ' '
+    progress_todo = (self.total - self.current_step ) * ' '
     bar = f'[{progress_done}{progress_todo}]'
+
+    percentage = round((self.current_step / self.total) * 100, 2)
+    str_percentage = f' {percentage}%'
+
+    loading_bar = f'{bar}{str_percentage}'
+
     if self.update_terminal:
-      print(f'\r{bar}', end='')
+      print(f'\r{loading_bar}', end='')
     else:
-      print(f'{bar}')
+      print(f'{loading_bar}')
