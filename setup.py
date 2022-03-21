@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setuptools.setup(
   name="pyloading_bar",
   packages=['pyloading_bar'],
-  version="0.1.6",
+  version="0.0.1",
   author="Nalbert Gabriel Melo Leal",
   author_email="nalbertgml@gmail.com",
   description="A python loading bar to use in terminal applications",
