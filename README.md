@@ -5,7 +5,7 @@
 Just use pip:  
   
 ```bash
-$ pip install -i https://test.pypi.org/simple/ pyloading-bar==0.1.5
+$ pip install -i https://test.pypi.org/simple/ pyloading-bar==0.1.6
 ```  
   
 ## How to use:  
