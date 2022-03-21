@@ -1,3 +1,6 @@
+build:
+	rm -r dist/
+	rm -r build/
+	python setup.py bdist_wheel
 pypi:
-  python -m build
-  py -m twine upload --repository testpypi dist/*
+	py -m twine upload --repository testpypi dist/*
