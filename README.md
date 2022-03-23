@@ -47,14 +47,12 @@ for step in RangeBar(number_of_steps):
   print(step)
 ```
 
-now the bar look like this:  
-[@@@@@@@@@@]
-
 And if you want that the terminal don't update the last line with the new progress bar state (the progress bar assume by default that you don't print anything to the terminal), just say to the progress bar print a new line to each step:
 
 ```python
 from pyloading_bar import Bar
 
+# The paramenter "symbol" change the character used into the loading bar
 number_of_steps = 10
 for step in RangeBar(number_of_steps, symbol='@', update_terminal=False):
   print(step)
