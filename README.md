@@ -43,12 +43,37 @@ You can chage the bar by the symbol parameter:
 from pyloading_bar import RangeBar
   
 number_of_steps = 10
-for step in RangeBar(number_of_steps):
+for step in RangeBar(number_of_steps, symbol='@'):
   print(step)
 ```
 
 now the bar look like this:  
 [@@@@@@@@@@]
+
+or a full string and it'll iterate thru the string to display inner steps:
+
+```python
+from pyloading_bar import RangeBar
+  
+number_of_steps = 10
+for step in RangeBar(number_of_steps, symbol='▁▂▃▄▅▆▇█'):
+  print(step)
+```
+now the bar look like this:  
+[█▇        ]
+
+if you want to change the walls of the bar, you can use the template parameter:
+with the template you *MUST* use some char at the begining and at the end of the bar.
+
+```python
+from pyloading_bar import RangeBar
+  
+number_of_steps = 10
+for step in RangeBar(number_of_steps, template='|▁▂▃▄▅▆▇█|'):
+  print(step)
+```
+now the bar look like this:  
+|█▇        |
 
 And if you want that the terminal don't update the last line with the new progress bar state (the progress bar assume by default that you don't print anything to the terminal), just say to the progress bar print a new line to each step:
 
