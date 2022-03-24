@@ -18,7 +18,7 @@ There's two versions of the bar. The Bar (most simple version of the bar):
 from pyloading_bar import Bar
 
 number_of_steps = 2
-bar = bar(number_of_steps)
+bar = Bar(number_of_steps)
 # do something
 bar.next()
 # do something
