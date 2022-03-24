@@ -80,6 +80,7 @@ And if you want that the terminal don't update the last line with the new progre
 ```python
 from pyloading_bar import Bar
 
+# The paramenter "symbol" change the character used into the loading bar
 number_of_steps = 10
 for step in RangeBar(number_of_steps, symbol='@', update_terminal=False):
   print(step)
