@@ -5,10 +5,10 @@
 Just use pip:  
   
 ```bash
-$ pip install pyloading-bar==0.0.1
+$ pip install pyloading-bar==0.0.2
 ```  
   
-## How to use:  
+## How to use  
 
 For now pyloading_bar is a very simple package to draw a simple progress bar in the terminal:
 
@@ -85,3 +85,11 @@ number_of_steps = 10
 for step in RangeBar(number_of_steps, symbol='@', update_terminal=False):
   print(step)
 ```
+
+## Contributors  
+
+<a href="https://github.com/NalbertLeal/pyloading_bar/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=NalbertLeal/pyloading_bar" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).

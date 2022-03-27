@@ -1,10 +1,12 @@
-build:
+clean:
 	rm -r dist/
 	rm -r build/
+	pyloading_bar.egg-info/
+build:
 	python setup.py bdist_wheel
 test:
 	python -m unittest -v
 testpypi:
-	py -m twine upload --repository testpypi dist/*
+	python -m twine upload --repository testpypi dist/*
 pypi:
-	py -m twine upload --repository pypi dist/*
+	python -m twine upload --repository pypi dist/*
